@@ -1,0 +1,32 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Housing Price Predictor</title>
+</head>
+<body>
+    <h1>🏡 Predict Median House Value</h1>
+    <form action="/predict" method="post">
+        <label>Longitude: <input type="text" name="longitude"></label><br>
+        <label>Latitude: <input type="text" name="latitude"></label><br>
+        <label>Housing Median Age: <input type="text" name="housing_median_age"></label><br>
+        <label>Total Rooms: <input type="text" name="total_rooms"></label><br>
+        <label>Total Bedrooms: <input type="text" name="total_bedrooms"></label><br>
+        <label>Population: <input type="text" name="population"></label><br>
+        <label>Households: <input type="text" name="households"></label><br>
+        <label>Median Income: <input type="text" name="median_income"></label><br>
+        <label>Ocean Proximity:
+            <select name="ocean_proximity">
+                <option value="NEAR BAY">NEAR BAY</option>
+                <option value="INLAND">INLAND</option>
+                <option value="NEAR OCEAN">NEAR OCEAN</option>
+                <option value="ISLAND">ISLAND</option>
+                <option value="<1H OCEAN"><1H OCEAN</option>
+            </select>
+        </label><br><br>
+        <button type="submit">Predict</button>
+    </form>
+    <h2>{{ prediction_text }}</h2>
+</body>
+</html>
